@@ -42,10 +42,7 @@ jobs:
         # The published @opendxl/dxl-client 0.1.4 pulls mqtt 2.x and with it the ws
         # advisories, and its provisioning CLI never validated the management server.
         # --no-save leaves package.json alone.
-        # The provisioning CLI in this job needs --insecure, which landed after the
-        # v0.1.4+fork.1 release, so this job installs the branch rather than the tarball.
-        # Switch back to the release URL once a release carries the CLI fix.
-        npm install --no-save "github:JMuellerTX/opendxl-client-javascript#master"
+        npm install --no-save "https://github.com/JMuellerTX/opendxl-client-javascript/releases/download/v0.1.4%2Bfork.2/opendxl-dxl-client-0.1.4%2Bfork.2.tgz"
         
     - name: Configure Client
       run: |
